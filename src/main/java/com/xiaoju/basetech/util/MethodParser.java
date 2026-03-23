@@ -27,7 +27,8 @@ public class MethodParser {
     public HashMap<String, String> parseMethodsMd5(String classFile) throws Exception {
         methodMd5Map = new HashMap<>();
         FileInputStream in = new FileInputStream(classFile);
-        CompilationUnit cu = JavaParser.parse(in);
+        JavaParser javaParser = new JavaParser();
+        CompilationUnit cu = javaParser.parse(in).getResult().orElseThrow(() -> new RuntimeException("Failed to parse file: " + classFile));
         //这里去掉注释好像没啥用20200213
         List<Comment> comments = cu.getAllContainedComments();
         List<Comment> unwantedComments = comments

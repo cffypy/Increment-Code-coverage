@@ -37,7 +37,7 @@ import static com.xiaoju.basetech.util.Constants.*;
 @Slf4j
 @Service
 public class CodeCovServiceImpl implements CodeCovService {
-    private static final String JACOCO_PATH = System.getProperty("user.home") + "/org.jacoco.cli-1.0.2-SNAPSHOT-nodeps.jar";
+    private static final String JACOCO_PATH = System.getProperty("user.home") + "/org.jacoco.cli-0.8.12-nodeps.jar";
     private static final String COV_PATH = System.getProperty("user.home") + "/cover/";
     //普通命令超时时间是10分钟,600000L 143
     private static final Long CMD_TIMEOUT = 600000L;
